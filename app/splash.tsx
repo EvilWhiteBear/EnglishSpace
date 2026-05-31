@@ -5,79 +5,65 @@ import {
 } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
-import Svg, { Circle, Ellipse, Rect, Path, G } from 'react-native-svg';
+import Svg, { Circle, Ellipse, Rect, Defs, RadialGradient, Stop } from 'react-native-svg';
 import { Colors, Spacing, Radius, FontSize, FontWeight } from '@/constants/theme';
 
 const { width, height } = Dimensions.get('window');
 
 // ─── SVG Astronaut ────────────────────────────────────────────────
-function AstronautSVG({ size = 200 }: { size?: number }) {
+function AstronautSVG({ size = 210 }: { size?: number }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 200 200">
-      {/* Backpack */}
-      <Rect x="82" y="155" width="36" height="28" rx="6" fill="#B8C4D8" />
-      <Rect x="87" y="160" width="26" height="18" rx="4" fill="#8A96B0" />
-
-      {/* Body suit */}
-      <Ellipse cx="100" cy="128" rx="44" ry="52" fill="#E2E8F4" />
-
-      {/* Suit detail stripe */}
-      <Rect x="78" y="102" width="44" height="7" rx="3.5" fill="#C0CADC" />
-      <Rect x="80" y="114" width="40" height="5" rx="2.5" fill="#C0CADC" />
-
-      {/* Chest badge — gold star */}
-      <Circle cx="100" cy="132" r="9" fill="#FFD700" opacity="0.95" />
-      <Circle cx="100" cy="132" r="5.5" fill="#FF9500" />
-
-      {/* Left arm */}
-      <Ellipse cx="58" cy="118" rx="13" ry="27" fill="#D8E0F0"
-        transform="rotate(-12 58 118)" />
-      {/* Left glove */}
-      <Circle cx="49" cy="141" r="11" fill="#B0BAD0" />
-      <Ellipse cx="49" cy="148" rx="8" ry="4" fill="#9AA4C0" />
-
-      {/* Right arm */}
-      <Ellipse cx="142" cy="118" rx="13" ry="27" fill="#D8E0F0"
-        transform="rotate(12 142 118)" />
-      {/* Right glove */}
-      <Circle cx="151" cy="141" r="11" fill="#B0BAD0" />
-      <Ellipse cx="151" cy="148" rx="8" ry="4" fill="#9AA4C0" />
-
-      {/* Legs */}
-      <Ellipse cx="83" cy="174" rx="16" ry="19" fill="#CCD4E6" />
-      <Ellipse cx="117" cy="174" rx="16" ry="19" fill="#CCD4E6" />
-      {/* Boots */}
-      <Ellipse cx="83" cy="189" rx="17" ry="9" fill="#A0AABE" />
-      <Ellipse cx="117" cy="189" rx="17" ry="9" fill="#A0AABE" />
-
-      {/* Helmet ring */}
-      <Circle cx="100" cy="74" r="44" fill="#C8D4E8" />
-      {/* Helmet visor */}
-      <Circle cx="100" cy="74" r="38" fill="#0D2D6B" opacity="0.92" />
-      {/* Visor inner glow */}
-      <Circle cx="100" cy="74" r="34" fill="#122456" />
-
-      {/* Stars inside visor */}
-      <Circle cx="86" cy="62" r="2.5" fill="#FFFFFF" opacity="0.9" />
-      <Circle cx="116" cy="70" r="1.5" fill="#FFFFFF" opacity="0.7" />
-      <Circle cx="94" cy="82" r="1" fill="#FFFFFF" opacity="0.5" />
-      <Circle cx="110" cy="60" r="1.5" fill="#B0D0FF" opacity="0.8" />
-      <Circle cx="80" cy="78" r="1" fill="#FFE566" opacity="0.6" />
-
-      {/* Visor reflection highlight */}
-      <Ellipse cx="85" cy="57" rx="11" ry="7" fill="#FFFFFF" opacity="0.15"
-        transform="rotate(-30 85 57)" />
-      <Ellipse cx="82" cy="54" rx="5" ry="3" fill="#FFFFFF" opacity="0.25"
-        transform="rotate(-30 82 54)" />
-
-      {/* Helmet outer highlight */}
-      <Ellipse cx="80" cy="50" rx="14" ry="9" fill="#FFFFFF" opacity="0.1"
-        transform="rotate(-20 80 50)" />
-
-      {/* Antenna */}
-      <Rect x="98" y="28" width="4" height="14" rx="2" fill="#B0BAD0" />
-      <Circle cx="100" cy="26" r="5" fill="#FF4444" opacity="0.9" />
-      <Circle cx="100" cy="26" r="3" fill="#FF8888" opacity="0.7" />
+    <Svg width={size} height={size} viewBox="0 0 200 220">
+      <Defs>
+        <RadialGradient id="hg" cx="45%" cy="35%" r="55%">
+          <Stop offset="0%" stopColor="#2A4A8A" />
+          <Stop offset="100%" stopColor="#0A1A3A" />
+        </RadialGradient>
+        <RadialGradient id="sg" cx="50%" cy="30%" r="60%">
+          <Stop offset="0%" stopColor="#FFFFFF" />
+          <Stop offset="100%" stopColor="#C8D4E8" />
+        </RadialGradient>
+      </Defs>
+      {/* Тело */}
+      <Ellipse cx="100" cy="160" rx="46" ry="52" fill="url(#sg)" />
+      <Rect x="88" y="108" width="24" height="16" rx="4" fill="#D0D8EC" />
+      <Ellipse cx="100" cy="126" rx="30" ry="10" fill="#C8D0E4" />
+      {/* Детали груди */}
+      <Rect x="82" y="138" width="36" height="5" rx="2.5" fill="#B8C4D8" />
+      <Circle cx="100" cy="153" r="9" fill="#E8ECF8" />
+      <Circle cx="100" cy="153" r="6" fill="#FFD700" />
+      <Circle cx="100" cy="153" r="3" fill="#FF8C00" />
+      {/* Панель управления */}
+      <Rect x="84" y="163" width="32" height="18" rx="4" fill="#D0D8EC" />
+      <Circle cx="91" cy="172" r="3" fill="#FF4444" />
+      <Circle cx="100" cy="172" r="3" fill="#44FF44" />
+      <Circle cx="109" cy="172" r="3" fill="#4488FF" />
+      {/* Руки */}
+      <Ellipse cx="60" cy="150" rx="15" ry="28" fill="url(#sg)" transform="rotate(-12 60 150)" />
+      <Ellipse cx="52" cy="175" rx="13" ry="10" fill="#B8C4D8" />
+      <Ellipse cx="140" cy="150" rx="15" ry="28" fill="url(#sg)" transform="rotate(12 140 150)" />
+      <Ellipse cx="148" cy="175" rx="13" ry="10" fill="#B8C4D8" />
+      {/* Ноги и ботинки */}
+      <Ellipse cx="83" cy="204" rx="16" ry="18" fill="#C8D4E8" />
+      <Ellipse cx="117" cy="204" rx="16" ry="18" fill="#C8D4E8" />
+      <Ellipse cx="83" cy="215" rx="18" ry="8" fill="#A8B4C8" />
+      <Ellipse cx="117" cy="215" rx="18" ry="8" fill="#A8B4C8" />
+      {/* Шлем */}
+      <Circle cx="100" cy="76" r="44" fill="#D8E0F0" />
+      <Ellipse cx="59" cy="78" rx="8" ry="16" fill="#C0CCD8" />
+      <Ellipse cx="141" cy="78" rx="8" ry="16" fill="#C0CCD8" />
+      {/* Визор */}
+      <Ellipse cx="100" cy="76" rx="30" ry="28" fill="url(#hg)" />
+      {/* Отражения в визоре */}
+      <Circle cx="85" cy="64" r="5" fill="#FFFFFF" opacity="0.5" />
+      <Circle cx="116" cy="82" r="3" fill="#FFFFFF" opacity="0.3" />
+      <Circle cx="90" cy="88" r="2" fill="#FFFFFF" opacity="0.2" />
+      {/* Блик на шлеме */}
+      <Ellipse cx="82" cy="56" rx="14" ry="9" fill="#FFFFFF" opacity="0.18"
+        transform="rotate(-25 82 56)" />
+      {/* Антенна */}
+      <Rect x="98" y="32" width="4" height="14" rx="2" fill="#C0CCD8" />
+      <Circle cx="100" cy="30" r="5" fill="#FFD700" />
     </Svg>
   );
 }

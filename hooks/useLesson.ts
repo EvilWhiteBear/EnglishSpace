@@ -5,6 +5,7 @@ import {
   generateFeedback, checkAnswer, getRandomItem
 } from '@/services/sparkService';
 import { NOVA_RESPONSES } from '@/constants/lessonData';
+import { novaSpeak, teachWord } from '@/services/voiceService';
 
 type LessonPhase = 'intro' | 'teaching' | 'practice' | 'complete';
 
@@ -32,6 +33,7 @@ export function useLesson(lesson: Lesson, onComplete: () => void) {
 
   const startLesson = useCallback(async () => {
     addMessage({ role: 'spark', text: lesson.introMessage, type: 'intro' });
+    novaSpeak(lesson.introMessage).catch(() => {});
     await new Promise(r => setTimeout(r, 1500));
     setIsTyping(true);
     await new Promise(r => setTimeout(r, 1000));
@@ -73,6 +75,7 @@ export function useLesson(lesson: Lesson, onComplete: () => void) {
       type: 'word_teach'
     });
     setCurrentWordIndex(index + 1);
+    teachWord({ english: word.english, russian: word.russian }).catch(() => {});
   }, [lesson]);
 
   const askPracticeQuestion = useCallback(async (index: number) => {
@@ -119,11 +122,13 @@ export function useLesson(lesson: Lesson, onComplete: () => void) {
     setAnsweredWords(prev => ({ ...prev, [word.id]: correct }));
 
     simulateTyping(() => {
+      const feedbackText = generateFeedback(correct, word);
       addMessage({
         role: 'spark',
-        text: generateFeedback(correct, word),
+        text: feedbackText,
         type: 'feedback'
       });
+      novaSpeak(feedbackText).catch(() => {});
       const nextIndex = practiceWordIndex + 1;
       setPracticeWordIndex(nextIndex);
       setTimeout(() => askPracticeQuestion(nextIndex), 800);

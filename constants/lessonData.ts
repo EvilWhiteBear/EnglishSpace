@@ -145,6 +145,108 @@ export const WORDS: Word[] = [
     emoji: '👍', example: 'This is very good!', exampleRu: 'Это очень хорошо!',
     level: 3, topic: 'adjectives'
   },
+
+  // ── Неделя 4: Цвета ──────────────────────────────────────────────
+  { id:'w21', english:'Red',    transcription:'РЭД',     russian:'Красный',
+    association:'РЭД — как РЕДИСКА — она красная!',
+    emoji:'🔴', example:'The apple is red.',      exampleRu:'Яблоко красное.',      level:4, topic:'colors' },
+  { id:'w22', english:'Blue',   transcription:'БЛУУ',    russian:'Синий',
+    association:'БЛУУ — звук синей волны!',
+    emoji:'🔵', example:'The sky is blue.',       exampleRu:'Небо синее.',          level:4, topic:'colors' },
+  { id:'w23', english:'Green',  transcription:'ГРИН',    russian:'Зелёный',
+    association:'ГРИН — ГРИНасы у лягушки — она зелёная!',
+    emoji:'🟢', example:'Grass is green.',        exampleRu:'Трава зелёная.',       level:4, topic:'colors' },
+  { id:'w24', english:'Yellow', transcription:'ЕЛ-оу',  russian:'Жёлтый',
+    association:'ЕЛ-оу — ЕЛ оладьи — они жёлтые!',
+    emoji:'🟡', example:'The sun is yellow.',     exampleRu:'Солнце жёлтое.',       level:4, topic:'colors' },
+  { id:'w25', english:'Black',  transcription:'БЛЭК',   russian:'Чёрный',
+    association:'БЛЭКаут — чёрная тьма!',
+    emoji:'⚫', example:'I have a black cat.',    exampleRu:'У меня чёрный кот.',   level:4, topic:'colors' },
+
+  // ── Неделя 4: Прилагательные ─────────────────────────────────────
+  { id:'w26', english:'Big',    transcription:'БИГ',    russian:'Большой',
+    association:'БИГ Мак — большой бургер!',
+    emoji:'🐘', example:'This is a big city.',   exampleRu:'Это большой город.',    level:4, topic:'adjectives' },
+  { id:'w27', english:'Small',  transcription:'СМОЛ',   russian:'Маленький',
+    association:'СМОЛка — маленькая капля смолы',
+    emoji:'🐭', example:'My dog is small.',      exampleRu:'Моя собака маленькая.', level:4, topic:'adjectives' },
+  { id:'w28', english:'Happy',  transcription:'ХЭП-и',  russian:'Счастливый',
+    association:'Happy Birthday! Все счастливы!',
+    emoji:'😊', example:'I am very happy!',      exampleRu:'Я очень счастлив!',     level:4, topic:'adjectives' },
+  { id:'w29', english:'Cold',   transcription:'КОЛД',   russian:'Холодный',
+    association:'КОЛД — КОЛДун заморозил воду!',
+    emoji:'🧊', example:'The water is cold.',    exampleRu:'Вода холодная.',        level:4, topic:'adjectives' },
+  { id:'w30', english:'Hot',    transcription:'ХОТ',    russian:'Горячий',
+    association:'ХОТ-дог горячий! ХОТ = горячо',
+    emoji:'🔥', example:'The coffee is hot.',    exampleRu:'Кофе горячий.',         level:4, topic:'adjectives' },
+
+  // ── Неделя 5: Еда ────────────────────────────────────────────────
+  { id:'w31', english:'Bread',  transcription:'БРЭД',   russian:'Хлеб',
+    association:'БРЭД Питт каждый день ест хлеб!',
+    emoji:'🍞', example:'I eat bread every morning.', exampleRu:'Я ем хлеб каждое утро.', level:5, topic:'food' },
+  { id:'w32', english:'Coffee', transcription:'КО-фи',  russian:'Кофе',
+    association:'КОФта согревает как кофе!',
+    emoji:'☕', example:'I love morning coffee.', exampleRu:'Я люблю утренний кофе.',    level:5, topic:'food' },
+  { id:'w33', english:'Tea',    transcription:'ТИ',     russian:'Чай',
+    association:'ТИ — ТИхий вечер с чаем',
+    emoji:'🍵', example:'Would you like some tea?', exampleRu:'Хочешь чаю?',           level:5, topic:'food' },
+  { id:'w34', english:'Milk',   transcription:'МИЛК',   russian:'Молоко',
+    association:'МИЛый Кот любит молоко',
+    emoji:'🥛', example:'Milk is very healthy.',  exampleRu:'Молоко очень полезное.',   level:5, topic:'food' },
+  { id:'w35', english:'Apple',  transcription:'ЭП-л',   russian:'Яблоко',
+    association:'ЭП-л — это Apple! Яблочный телефон 🍎📱',
+    emoji:'🍎', example:'I eat an apple every day.', exampleRu:'Я ем яблоко каждый день.', level:5, topic:'food' },
+
+  // ── Неделя 6: Дом ────────────────────────────────────────────────
+  { id:'w36', english:'Door',   transcription:'ДОР',    russian:'Дверь',
+    association:'ДОРогой гость — открой дверь!',
+    emoji:'🚪', example:'Close the door please.',  exampleRu:'Закрой дверь пожалуйста.', level:6, topic:'home' },
+  { id:'w37', english:'Window', transcription:'УИН-доу',russian:'Окно',
+    association:'Windows! Окно компьютера = окно комнаты',
+    emoji:'🪟', example:'Open the window please.',exampleRu:'Открой окно пожалуйста.',  level:6, topic:'home' },
+  { id:'w38', english:'Bed',    transcription:'БЭД',    russian:'Кровать',
+    association:'BAD (плохо) когда нет кровати!',
+    emoji:'🛏️', example:'I go to bed at 11.',      exampleRu:'Я ложусь в 11.',          level:6, topic:'home' },
+  { id:'w39', english:'Phone',  transcription:'ФОУН',   russian:'Телефон',
+    association:'ФОН телефона всегда красивый!',
+    emoji:'📱', example:'My phone is new.',        exampleRu:'Мой телефон новый.',       level:6, topic:'home' },
+  { id:'w40', english:'Key',    transcription:'КИ',     russian:'Ключ',
+    association:'КИнул ключ и забыл где он!',
+    emoji:'🔑', example:'Where is my key?',        exampleRu:'Где мой ключ?',            level:6, topic:'home' },
+
+  // ── Неделя 7: Глаголы ────────────────────────────────────────────
+  { id:'w41', english:'Come',   transcription:'КАМ',    russian:'Приходить',
+    association:'КАМера включилась — гости пришли!',
+    emoji:'🏃', example:'Come here please.',       exampleRu:'Иди сюда пожалуйста.',    level:7, topic:'verbs' },
+  { id:'w42', english:'Drink',  transcription:'ДРИНК',  russian:'Пить',
+    association:'ДРИНК-дринк — звук наливаемого напитка',
+    emoji:'🥤', example:'I drink water every day.',exampleRu:'Я пью воду каждый день.', level:7, topic:'verbs' },
+  { id:'w43', english:'Study',  transcription:'СТАД-и', russian:'Учиться',
+    association:'СТАДия учёбы — стадия за стадией!',
+    emoji:'📚', example:'I study English every day.',exampleRu:'Я учу английский каждый день.', level:7, topic:'verbs' },
+  { id:'w44', english:'Listen', transcription:'ЛИС-эн', russian:'Слушать',
+    association:'ЛИС в лесу слушает тишину',
+    emoji:'👂', example:'Listen to me please.',    exampleRu:'Послушай меня пожалуйста.', level:7, topic:'verbs' },
+  { id:'w45', english:'Speak',  transcription:'СПИК',   russian:'Говорить',
+    association:'СПИч (речь) — говори!',
+    emoji:'🗣️', example:'Do you speak English?',  exampleRu:'Ты говоришь по-английски?', level:7, topic:'verbs' },
+
+  // ── Неделя 8: Город ──────────────────────────────────────────────
+  { id:'w46', english:'Car',    transcription:'КАР',    russian:'Машина',
+    association:'КАРкает ворона на машине!',
+    emoji:'🚗', example:'My car is red.',           exampleRu:'Моя машина красная.',     level:8, topic:'city' },
+  { id:'w47', english:'Bus',    transcription:'БАС',    russian:'Автобус',
+    association:'БАС-гитарист едет в автобусе!',
+    emoji:'🚌', example:'Take the bus to school.', exampleRu:'Езжай на автобусе в школу.', level:8, topic:'city' },
+  { id:'w48', english:'Shop',   transcription:'ШОП',    russian:'Магазин',
+    association:'ШОПинг! Все идут в магазин',
+    emoji:'🛒', example:'I go to the shop.',        exampleRu:'Я иду в магазин.',        level:8, topic:'city' },
+  { id:'w49', english:'Park',   transcription:'ПАРК',   russian:'Парк',
+    association:'ПАРК — и по-русски ПАРК!',
+    emoji:'🌳', example:'Let us walk in the park.',exampleRu:'Давай погуляем в парке.', level:8, topic:'city' },
+  { id:'w50', english:'Hotel',  transcription:'ХОУ-тэл',russian:'Гостиница',
+    association:'ХОТЕЛ остановиться в отеле!',
+    emoji:'🏨', example:'The hotel is very nice.', exampleRu:'Гостиница очень красивая.', level:8, topic:'city' },
 ];
 
 export const LESSONS: Lesson[] = [
@@ -178,7 +280,39 @@ export const LESSONS: Lesson[] = [
     subtitle: 'Базовые глаголы',
     week: 3, day: 1,
     words: WORDS.filter(w => ['w16','w17','w18','w19','w20'].includes(w.id)),
-  introMessage: 'Время действовать! Сегодня учим глаголы — слова действия. Nova уверена: с ними ты сможешь строить первые фразы о своей жизни! 🌟'
+    introMessage: 'Время действовать! Сегодня учим глаголы — слова действия. Nova уверена: с ними ты сможешь строить первые фразы о своей жизни! 🌟'
+  },
+  {
+    id: 'l5',
+    title: 'Мир цветов',
+    subtitle: 'Цвета вокруг нас',
+    week: 4, day: 1,
+    words: WORDS.filter(w => w.topic === 'colors'),
+    introMessage: 'Nova говорит: Сегодня учим цвета — после урока ты сможешь описать всё вокруг! 🌈'
+  },
+  {
+    id: 'l6',
+    title: 'Вкусная еда',
+    subtitle: 'Еда и напитки',
+    week: 5, day: 1,
+    words: WORDS.filter(w => w.topic === 'food' && w.level === 5),
+    introMessage: 'Nova говорит: Еда объединяет людей! Знание еды по-английски — первый шаг. Погнали! 🍕'
+  },
+  {
+    id: 'l7',
+    title: 'Мой дом',
+    subtitle: 'Комнаты и предметы',
+    week: 6, day: 1,
+    words: WORDS.filter(w => w.topic === 'home' && w.level === 6),
+    introMessage: 'Nova говорит: Дом — это где сердце. Выучим слова о доме — ты будешь использовать их каждый день! 🏠'
+  },
+  {
+    id: 'l8',
+    title: 'Действую!',
+    subtitle: 'Глаголы жизни',
+    week: 7, day: 1,
+    words: WORDS.filter(w => w.level === 7),
+    introMessage: 'Nova говорит: Глаголы — двигатели языка! Без них нельзя говорить. Учим самые нужные! 🚀'
   },
 ];
 

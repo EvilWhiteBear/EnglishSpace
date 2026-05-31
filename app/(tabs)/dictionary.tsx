@@ -1,12 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity,
-  FlatList, TextInput,
+  FlatList, TextInput, ActivityIndicator,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Colors, Spacing, Radius, FontSize, FontWeight } from '@/constants/theme';
 import { useUser } from '@/hooks/useUser';
 import { WORDS, Word } from '@/constants/lessonData';
+import { pronounceWord, stopSpeaking } from '@/services/voiceService';
 
 const FILTERS = [
   { id: 'all', label: 'Все' },
@@ -21,7 +22,19 @@ function WordCard({ word, progress, onConfidence }: {
   onConfidence: (id: string, c: number) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const confidence = progress?.confidence ?? -1;
+
+  const handleListen = async () => {
+    if (isPlaying) {
+      await stopSpeaking();
+      setIsPlaying(false);
+      return;
+    }
+    setIsPlaying(true);
+    await pronounceWord(word.english);
+    setIsPlaying(false);
+  };
 
   return (
     <TouchableOpacity style={styles.wordCard} onPress={() => setExpanded(e => !e)} activeOpacity={0.85}>
@@ -36,6 +49,17 @@ function WordCard({ word, progress, onConfidence }: {
           </View>
           <Text style={styles.wordRussian}>{word.russian}</Text>
         </View>
+        <TouchableOpacity
+          style={styles.listenBtn}
+          onPress={handleListen}
+          activeOpacity={0.8}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+        >
+          {isPlaying
+            ? <ActivityIndicator size="small" color={Colors.primary} />
+            : <Text style={styles.listenIcon}>🔊</Text>
+          }
+        </TouchableOpacity>
         <Text style={styles.expandIcon}>{expanded ? '▲' : '▼'}</Text>
       </View>
 
@@ -181,6 +205,12 @@ const styles = StyleSheet.create({
   wordEnglish: { fontSize: FontSize.lg, fontWeight: FontWeight.bold, color: Colors.textPrimary },
   wordTranscription: { fontSize: FontSize.sm, color: Colors.accent },
   wordRussian: { fontSize: FontSize.md, color: Colors.textSecondary, marginTop: 1 },
+  listenBtn: {
+    width: 36, height: 36, borderRadius: 18,
+    backgroundColor: Colors.bgSurface, alignItems: 'center', justifyContent: 'center',
+    borderWidth: 1, borderColor: Colors.border,
+  },
+  listenIcon: { fontSize: 18 },
   expandIcon: { fontSize: 12, color: Colors.textMuted },
   wordExpanded: { marginTop: Spacing.md, gap: Spacing.sm },
   associationBox: {

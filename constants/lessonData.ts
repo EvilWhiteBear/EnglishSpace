@@ -255,64 +255,64 @@ export const LESSONS: Lesson[] = [
     title: 'Первые слова',
     subtitle: 'Привет, мир!',
     week: 1, day: 1,
-    words: WORDS.filter(w => ['w1','w2','w3','w4','w5'].includes(w.id)),
-    introMessage: 'Привет! Я Nova, твой личный тренер. Сегодня мы выучим самые важные слова — те, что открывают любой разговор. Готов? Это будет легко и весело! 🌟'
+    words: WORDS.filter(w => w.topic === 'greetings'),
+    introMessage: 'Nova говорит: Привет! Сегодня твой первый урок. Выучим слова-приветствия — без них никуда! 👋',
   },
   {
     id: 'l2',
     title: 'Да, нет, коты',
     subtitle: 'Базовые слова',
     week: 1, day: 2,
-    words: WORDS.filter(w => ['w6','w7','w8','w9','w10'].includes(w.id)),
-  introMessage: 'Отлично! Ты уже знаешь приветствия! Сегодня учим суперважные слова: ДА, НЕТ и... котиков! Серьёзно, CAT — одно из первых слов, которое знают все. Nova рядом! 🌟'
+    words: WORDS.filter(w => w.topic === 'basics'),
+    introMessage: 'Nova говорит: Эти слова ты будешь использовать каждый день. Поехали! 🚀',
   },
   {
     id: 'l3',
     title: 'Моя семья',
-    subtitle: 'Семья и дом',
+    subtitle: 'Семья и люди',
     week: 2, day: 1,
-    words: WORDS.filter(w => ['w11','w12','w13','w14','w15'].includes(w.id)),
-  introMessage: 'Сегодня говорим о самом важном — о доме и семье. Nova подобрала примеры специально для тебя. Эти слова ты будешь использовать каждый день. Погнали! 🌟'
+    words: WORDS.filter(w => w.topic === 'family'),
+    introMessage: 'Nova говорит: Семья — это основа. Научись рассказывать о близких по-английски! 👨‍👩‍👧‍👦',
   },
   {
     id: 'l4',
-    title: 'Что я делаю',
-    subtitle: 'Базовые глаголы',
-    week: 3, day: 1,
-    words: WORDS.filter(w => ['w16','w17','w18','w19','w20'].includes(w.id)),
-    introMessage: 'Время действовать! Сегодня учим глаголы — слова действия. Nova уверена: с ними ты сможешь строить первые фразы о своей жизни! 🌟'
-  },
-  {
-    id: 'l5',
     title: 'Мир цветов',
     subtitle: 'Цвета вокруг нас',
     week: 4, day: 1,
     words: WORDS.filter(w => w.topic === 'colors'),
-    introMessage: 'Nova говорит: Сегодня учим цвета — после урока ты сможешь описать всё вокруг! 🌈'
+    introMessage: 'Nova говорит: Сегодня учим цвета — после урока ты сможешь описать всё вокруг! 🌈',
   },
   {
-    id: 'l6',
+    id: 'l5',
     title: 'Вкусная еда',
     subtitle: 'Еда и напитки',
     week: 5, day: 1,
-    words: WORDS.filter(w => w.topic === 'food' && w.level === 5),
-    introMessage: 'Nova говорит: Еда объединяет людей! Знание еды по-английски — первый шаг. Погнали! 🍕'
+    words: WORDS.filter(w => w.topic === 'food'),
+    introMessage: 'Nova говорит: Еда объединяет людей! Знание еды по-английски — первый шаг. Погнали! 🍕',
   },
   {
-    id: 'l7',
+    id: 'l6',
     title: 'Мой дом',
     subtitle: 'Комнаты и предметы',
     week: 6, day: 1,
-    words: WORDS.filter(w => w.topic === 'home' && w.level === 6),
-    introMessage: 'Nova говорит: Дом — это где сердце. Выучим слова о доме — ты будешь использовать их каждый день! 🏠'
+    words: WORDS.filter(w => w.topic === 'home'),
+    introMessage: 'Nova говорит: Дом — это где сердце. Выучим слова о доме — ты используешь их каждый день! 🏠',
   },
   {
-    id: 'l8',
+    id: 'l7',
     title: 'Действую!',
     subtitle: 'Глаголы жизни',
     week: 7, day: 1,
-    words: WORDS.filter(w => w.level === 7),
-    introMessage: 'Nova говорит: Глаголы — двигатели языка! Без них нельзя говорить. Учим самые нужные! 🚀'
+    words: WORDS.filter(w => w.topic === 'verbs'),
+    introMessage: 'Nova говорит: Глаголы — двигатели языка! Без них нельзя говорить. Учим самые нужные! 🚀',
+  },
+  {
+    id: 'l8',
+    title: 'Мой город',
+    subtitle: 'Транспорт и места',
+    week: 8, day: 1,
+    words: WORDS.filter(w => w.topic === 'city'),
+    introMessage: 'Nova говорит: Английский на улице! Сегодня учим слова для города и транспорта 🚌',
   },
 ];
 
